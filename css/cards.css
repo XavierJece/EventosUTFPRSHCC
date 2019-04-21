@@ -1,0 +1,382 @@
+@import url(https://fonts.googleapis.com/css?family=Pacifico);
+body {
+  /*padding: 0 5px 5px;*/
+  background-color: #E8E8E8   ;
+}
+
+/*h1#header {
+  text-align: center;
+  padding: 50px;
+  font-size: 62px;
+  font-family: "Pacifico";
+  text-shadow: 0 2px 2px #3c77b3;
+}*/
+
+.article-wrapper {
+  -moz-transition: width 0.4s;
+  -o-transition: width 0.4s;
+  -webkit-transition: width 0.4s;
+  transition: width 0.4s;
+  margin: 0px 5px 5px 10px;
+  width: 410px;
+}
+
+article {
+	position: relative;
+	padding-left: 180px;
+	padding-right: 75px;
+	height: 150px;
+	margin-bottom: 30px;
+	background-color: #FFF;
+	-moz-border-radius: 150px;
+	-webkit-border-radius: 150px;
+	border-radius: 150px;
+	cursor: pointer;
+}
+article .img-wrapper {
+	position: absolute;
+	top: -10px;
+	left: -10px;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+	background-color: #E8E8E8;
+	padding: 10px;
+	z-index: 1;
+	-moz-transition: all 0.2s;
+	-o-transition: all 0.2s;
+	-webkit-transition: all 0.2s;
+	transition: all 0.2s;
+}
+article .img-wrapper .img{
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+	-moz-transition: all 0.2s;
+	-o-transition: all 0.2s;
+	-webkit-transition: all 0.2s;
+	transition: all 0.2s;
+	width: 150px;
+	height: 150px;
+	background-size: cover!important;
+	background-position: center center!important;
+  
+}
+article h1 {
+	height: 20px;
+	line-height: 30px;
+	font-size: 24px;
+	/* border-bottom: 2px solid #ACE; */
+	color: #428bca;
+	-moz-transition: all 0.4s;
+	-o-transition: all 0.4s;
+	-webkit-transition: all 0.4s;
+	transition: all 0.4s;
+	font-weight: 500;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+article p {
+	color: #888;
+	font-size: 16px;
+	font-weight: 500;
+}
+article a {
+	position: absolute;
+	display: block;
+	top: 0;
+	left: 0;
+	height: 100%;
+	line-height: 150px;
+	text-align: center;
+	width: 100%;
+	background-color: #FFF;
+	font-size: 48px;
+	font-style: italic;
+	opacity: 0;
+	color: #428bca !important;
+	-moz-transition: all 0.4s;
+	-o-transition: all 0.4s;
+	-webkit-transition: all 0.4s;
+	transition: all 0.4s;
+	text-decoration: none !important;
+	-moz-border-radius: 150px;
+	-webkit-border-radius: 150px;
+	border-radius: 150px;
+	font-family: "Pacifico";
+	text-shadow: 0 1px 1px #AAA;
+}
+article:hover .img-wrapper {
+	padding: 5px;
+	-moz-transform: rotate(5deg);
+	-ms-transform: rotate(5deg);
+	-webkit-transform: rotate(5deg);
+	transform: rotate(5deg);
+}
+article:hover .img-wrapper .img {
+	width: 160px;
+	height: 160px;
+}
+article:hover a {
+	opacity: 1;
+}
+
+.bloc article {
+	padding: 10px;
+	min-height: 225px;
+	height: auto;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	margin-top: 75px;
+}
+.bloc article .img-wrapper {
+  position: relative;
+  top: -85px;
+  width: 170px;
+  left: inherit;
+  margin: auto;
+  margin-bottom: -100px;
+}
+.bloc article h1 {
+  font-size: 20px;
+  height: 20px;
+  line-height: 30px;
+  margin-left: 2px;
+  padding-top:  25px;
+}
+
+.bloc article h1#Vsetac {}
+
+.bloc article p {
+  font-size: 16px;
+  font-weight: bolder;
+}
+.bloc article a {
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  line-height: 255px;
+}
+
+
+article.sem-previa h1{
+  padding-top: calc(4%);
+}
+
+.bloc .sem-previa h1{
+	padding-top: calc(5% + 9px);
+}
+
+.bloc .titulo-grande h1{
+	padding-bottom: 51px;
+}
+
+@media only screen and (max-width: 418px) {
+	.bloc .titulo-grande h1{
+		padding-bottom: 50px;
+	}
+	
+}
+
+
+
+/* BTN MODO */
+
+.row-Organizacao{
+  border: 0px solid black;
+  /*background-color: #fff;*/
+  background-color: transparent;
+  border-radius: 50px; 
+  height: 50px;
+  margin: 30px 2px;
+  padding: 0px 20px;
+  padding-right: 75px;
+  justify-content: flex-end;
+}
+
+@media only screen and (min-width: 1401px) {
+  .row-Organizacao{
+    padding-right: 180px;
+  }
+
+}
+
+@media only screen and (max-width: 549px) {
+  .row-Organizacao{
+    padding-right: 20px;
+  }
+
+}
+
+
+
+.btn-Modo{
+  margin: 12px 0px;
+  height: 30px;
+}
+
+@media only screen and (max-width: 991px) {
+  .btn-Modo{
+    display: none;
+  }
+
+}
+
+
+
+.btn-Modo .btn{
+  padding: 1px;
+  width: 25px;
+}
+
+.btn-Modo .btn i {
+}
+
+
+
+/* Capa Card */
+
+.img-wrapper img{
+  width: 200px;
+  height: 150px;
+}
+
+.row-Cards{
+  width: 99%;
+  /* text-align: center; */
+justify-content: center;
+  align-items: center;  
+}
+
+
+/* ------------- Select de ordenação -------------------*/
+
+/* ///  DECORATION CSS ///  */
+.cont_select_center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-top: -30px;
+  margin-left: -150px;
+}
+
+.cont_heg_50 {
+  position: absolute;
+  height: 50%;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background-color: #fd7b52;
+}
+
+/* ///  END DECORATION CSS  ///  */
+.icon_select_mate {
+  position: absolute;
+  top: 20px;
+  right: 2%;
+  font-size: 16px;
+  height: 22px;
+  transition: all 275ms;
+}
+
+.select_mate {
+  position: relative;
+  float: left;
+  /*min-width: 300px;*/
+  /*width: 300px;*/
+  /*min-height: 60px;*/
+  font-family: 'Roboto';
+  color: #777;
+  font-weight: 300;
+  background-color: #fff;
+  box-shadow: 1px 2px 10px -2px rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
+  transition: all 375ms ease-in-out;
+  
+  /*Modificações Jecé*/
+  margin-right: 15px;
+  border-radius: 5px; 
+  height: 50px;
+  padding-left: 20px;
+  width: 175px;
+
+  /* Oculto el elemento select */
+}
+.select_mate select {
+  position: absolute;
+  overflow: hidden;
+  height: 0px;
+  opacity: 0;
+  z-index: -1;
+}
+
+.cont_list_select_mate {
+  position: relative;
+  float: left;
+  width: 100%;
+}
+
+.cont_select_int {
+  position: absolute;
+  left: -12px;
+  top: -4px;
+  z-index: 999;
+  overflow: hidden;
+  height: 0px;
+  width: 100%;
+  background-color: #fff;  
+  padding: 0px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  border-radius: 0px 0px 3px 3px;
+  box-shadow: 1px 4px 10px -2px rgba(0, 0, 0, 0.2);
+  transition: all 375ms ease-in-out;
+
+  width: 160px;
+}
+.cont_select_int li {
+  position: relative;
+  float: left;
+  width: 100%;
+  border-bottom: 1px solid #E0E0E0;
+  background-color: #fff; /*F5F5F5*/
+  list-style-type: none;
+  padding: 10px 2%;
+  margin: 0px;
+  transition: all 275ms ease-in-out;
+  display: block;
+  cursor: pointer;
+}
+.cont_select_int li:last-child {
+  border-radius: 3px;
+  border-bottom: 0px;
+}
+.cont_select_int li:hover {
+  background-color: #EEEEEE;
+}
+.cont_select_int .active {
+  background-color: #EEEEEE;
+}
+
+/* etiqueta <p> con la opcion selecionada  */
+.selecionado_opcion {
+  padding: 15px  5px;
+  width: 96%;
+  display: block;
+  margin: 0px;
+  cursor: pointer;
+}
+
+
+/*meu-link*/
+
+.meu-link{
+	text-decoration: none;
+}
+
+
+
+
+
+
