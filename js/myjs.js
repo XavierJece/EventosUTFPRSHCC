@@ -365,3 +365,62 @@ baguetteBox.run('.tz-gallery', {
   filter: new RegExp('.+\.(gif|jpe?g|png|webp|mp4)', 'i')
 });
 
+// -- Tabs Painel
+$('.tabgroup > div').hide();
+$('.tabgroup > div:first-of-type').show();
+$('.tabs a').click(function(e){
+  e.preventDefault();
+    var $this = $(this),
+        tabgroup = '#'+$this.parents('.tabs').data('tabgroup'),
+        others = $this.closest('li').siblings().children('a'),
+        target = $this.attr('href');
+    others.removeClass('active');
+    $this.addClass('active');
+    $(tabgroup).children('div').hide();
+    $(target).show();
+  
+})
+    
+// -- Configurações Tables
+$(document).ready( function () {
+  $('#tblEventos').DataTable( {
+    "language": {
+      "lengthMenu": "Listar  _MENU_ Eventos  por página",
+      "zeroRecords": "Nada Encontrado - Desculpas :(",
+      "info": "Mostrando página _PAGE_ de _PAGES_ página(s)",
+      "infoEmpty": "Nenhum registro disponível",
+      "infoFiltered": "(filtered from _MAX_ total records)",
+      "search": "Pesquisar:",
+      "processing":     "Pensando...",
+      "paginate": {
+        "first":      "Inicío",
+        "last":       "Último",
+        "next":       "Em Frente",
+        "previous":   "Para Trás"
+      }
+    },
+
+    "lengthMenu": [[5, 10, 20, 50, -1], [5, 10, 20, 50, "Todos"]]
+  } );
+
+  $('#tblVisita').DataTable( {
+    "language": {
+      "lengthMenu": "Listar  _MENU_ Eventos  por página",
+      "zeroRecords": "Nada Encontrado - Desculpas :(",
+      "info": "Mostrando página _PAGE_ de _PAGES_ página(s)",
+      "infoEmpty": "Nenhum registro disponível",
+      "infoFiltered": "(filtered from _MAX_ total records)",
+      "search": "Pesquisar:",
+      "processing":     "Pensando...",
+      "paginate": {
+        "first":      "Inicío",
+        "last":       "Último",
+        "next":       "Em Frente",
+        "previous":   "Para Trás"
+      }
+    },
+    
+    "lengthMenu": [[5, 10, 20, 50, -1], [5, 10, 20, 50, "Todos"]]
+
+  } );
+} );

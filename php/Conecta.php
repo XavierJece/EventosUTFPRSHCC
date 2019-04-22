@@ -15,7 +15,7 @@ class Conecta extends Config{
     /**My Functions */
     function login($usuario, $senha){
 
-        $stmt = $this->pdo->prepare("SELECT * FROM usuario WHERE nome = :a AND senha = :b");
+        $stmt = $this->pdo->prepare("SELECT * FROM usuario WHERE user = :a AND senha = :b");
         $stmt->bindValue(":a", $usuario);
         $stmt->bindValue(":b", $senha);
 

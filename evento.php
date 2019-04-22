@@ -12,26 +12,26 @@
 <html lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Participações em Eventos CC </title>		
+		<title>Participações em Eventos CC </title>		
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 		
 	<!-- Icone -->
 	<link rel="shortcut icon" href="/image/Logo/favicon.ico" type="image/x-icon" />
-    
-    <!-- BOOTSTRAP -->
-    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+		
+		<!-- BOOTSTRAP -->
+		<link href="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Font Awesome's Free -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+		<!-- Font Awesome's Free -->
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
 	<!-- Galeria -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.0/baguetteBox.min.css">
-    
-    <!-- My CSS -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.0/baguetteBox.min.css">
+		
+	<!-- My CSS -->
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/cards.css">
 	<link rel="stylesheet" type="text/css" href="css/gallery-grid.css">
-    
+		
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg mb-4 top-bar top-bar-Paginas navbar-static-top sps sps--abv">
@@ -73,27 +73,27 @@
 
 				<!-- Custom select structure
 				<div class="select_mate" data-mate-select="active" >
-				  	<select name="" onchange="" onclick="return false;" id="">
-				  		<option value="recentes">Mais Recentes</option>
-				  		<option value="antigos">Mais Antigos</option>
-				  		<option value="az" >A-Z</option>
-				  		<option value="za">Z-A</option>
-				  	</select>
+						<select name="" onchange="" onclick="return false;" id="">
+							<option value="recentes">Mais Recentes</option>
+							<option value="antigos">Mais Antigos</option>
+							<option value="az" >A-Z</option>
+							<option value="za">Z-A</option>
+						</select>
 
-				  	<p class="selecionado_opcion"  onclick="open_select(this)" ></p>
+						<p class="selecionado_opcion"  onclick="open_select(this)" ></p>
 
-				  	<span onclick="open_select(this)" class="icon_select_mate" >
-				  		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-				  			<path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/>
-				  			<path d="M0-.75h24v24H0z" fill="none"/>
-				  		</svg>
-				  	</span>
+						<span onclick="open_select(this)" class="icon_select_mate" >
+							<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+								<path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/>
+								<path d="M0-.75h24v24H0z" fill="none"/>
+							</svg>
+						</span>
 
-				  	<div class="cont_list_select_mate">
-				  		<ul class="cont_select_int">  </ul>
-				  	</div>
+						<div class="cont_list_select_mate">
+							<ul class="cont_select_int">  </ul>
+						</div>
 				</div>
-				  Custom select structure -->
+					Custom select structure -->
 
 				<div class="btn-group pull-right btn-Modo" id="switch-view">
 					<button class="btn btn-primary">
@@ -159,11 +159,11 @@
 	<!-- ************ FOOTER ************  -->
 	<footer>
 		<div class="row">
-		  <div class="col-lg-4 footer-utfpr"><p><a href="http://portal.utfpr.edu.br/cursos/coordenacoes/graduacao/santa-helena/sh-ciencia-da-computacao" target="_blank"> UTFPR - Santa Helena </br> Ciências da Computação</a></p>	</div>
-		  <hr class="separador-modal">
-		  <div class="col-lg-4 footer-copyright"><p><i class="far fa-copyright"></i> 2019 Copyright Text </p></div>
-		  <hr class="separador-modal">
-		  <div class="col-lg-4 footer-desveoper"><p>Developer by </br> Professor Xavier</p></div>
+			<div class="col-lg-4 footer-utfpr"><p><a href="http://portal.utfpr.edu.br/cursos/coordenacoes/graduacao/santa-helena/sh-ciencia-da-computacao" target="_blank"> UTFPR - Santa Helena </br> Ciências da Computação</a></p>	</div>
+			<hr class="separador-modal">
+			<div class="col-lg-4 footer-copyright"><p><i class="far fa-copyright"></i> 2019 Copyright Text </p></div>
+			<hr class="separador-modal">
+			<div class="col-lg-4 footer-desveoper"><p>Developer by </br> Professor Xavier</p></div>
 		</div>
 	</footer>
 	<!-- ************ FIM FOOTER ************  -->
@@ -265,7 +265,7 @@
 
 <!-- JQUERY AND BOOTSTRAP  -->
 	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>	
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>	
 
 
 	<!-- Galeria -->
