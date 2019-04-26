@@ -39,6 +39,33 @@ class Conecta extends Config{
         return $lista;
     }
 
+    function getEvento($id){
+        $stmt = $this->pdo->prepare("SELECT * FROM eventos WHERE id = :a");
+        $stmt->bindValue(":a", $id);
+        $run = $stmt->execute();
+
+        $lista = array();
+        while ($rs = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            array_push($lista, $rs);
+        }
+
+       if( count($lista) != 1){
+            return -1;
+        }else{
+            $evento = new Evento();
+
+            $evento->setId( $lista[0]['id']);
+            $evento->setTitulo($lista[0]['titulo']);
+            $evento->setPrevia($lista[0]['previa']);
+            $evento->setTexto($lista[0]['texto']);
+            $evento->setTipo($lista[0]['tipo']);
+            $evento->setData($lista[0]['data']);
+
+            return $evento;
+        }
+        
+    }
+
     function getFotos($evento){
         $stmt = $this->pdo->prepare("SELECT * FROM fotos WHERE evento = :a");
         $stmt->bindValue(":a", $evento);

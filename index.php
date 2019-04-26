@@ -1,6 +1,7 @@
 <?php 
 	header("Content-type: text/html; charset=utf-8");
-	require_once 'php/Conecta.php';
+  require_once 'php/Conecta.php';
+  require_once 'php/Elementos.php';
 	
 	$con = new Conecta();
   $raiz = 'curso-cc/';
@@ -45,10 +46,9 @@
     
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg mb-4 top-bar navbar-static-top sps sps--abv">
+  <!-- <nav class="navbar navbar-expand-lg mb-4 top-bar navbar-static-top sps sps--abv">
 		<div class="container">
 			<a class="navbar-brand mx-auto" href="#">
-				<!-- Gra<span>freez</span> -->
 				<img src="<?php echo $raiz?>image/Logo/utfpr.png" alt="UTFPR Santa Helena" class="logoHead">
 			</a>
 
@@ -73,7 +73,8 @@
 
 
 		</div>
-	</nav>
+	</nav> -->
+	<?php echo $header?>
 
 <!-- Swiper Silder
     ================================================== -->

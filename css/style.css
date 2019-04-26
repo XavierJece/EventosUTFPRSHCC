@@ -1035,6 +1035,25 @@ button.swiper-pagination-bullet{
 	clear: both;
 }
 
+.main-pagEvento{
+    margin-top: 100px;
+	margin-left: 15px;
+	margin-right: 15px;
+	padding: 0px 10px;
+}
+
+.main-pagEvento h2{
+    text-align: center;
+}
+
+.main-pagEvento input, .main-pagEvento textarea{
+    margin-bottom: 10px;
+}
+
+.main-pagEvento textarea{
+    height: 90px;
+}
+
 
 
 

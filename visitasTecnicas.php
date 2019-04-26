@@ -1,7 +1,8 @@
 <?php 
 	header("Content-type: text/html; charset=utf-8");
 	require_once 'php/Conecta.php';
-	
+	require_once 'php/Elementos.php';
+
 	$con = new Conecta();
 	$eventos = $con->getEventos('visita');
 ?>
@@ -34,10 +35,9 @@
     
 </head>
 <body>
-	<nav class="navbar navbar-expand-lg mb-4 top-bar top-bar-Paginas navbar-static-top sps sps--abv">
+	<!-- <nav class="navbar navbar-expand-lg mb-4 top-bar top-bar-Paginas navbar-static-top sps sps--abv">
 		<div class="container">
 			<a class="navbar-brand mx-auto" href="index.php">
-				<!-- Gra<span>freez</span> -->
 				<img src="image/Logo/utfpr.png" alt="UTFPR Santa Helena" class="logoHead">
 			</a>
 
@@ -61,7 +61,9 @@
 
 
 		</div>
-	</nav>
+	</nav> -->
+
+	<?php echo $header?>
 
 
 <!-- Main -->
@@ -157,7 +159,7 @@
 	</main>
 	
 	<!-- ************ FOOTER ************  -->
-	<footer>
+	<!-- <footer>
 		<div class="row">
 		  <div class="col-lg-4 footer-utfpr"><p><a href="http://portal.utfpr.edu.br/cursos/coordenacoes/graduacao/santa-helena/sh-ciencia-da-computacao" target="_blank"> UTFPR - Santa Helena </br> Ciências da Computação</a></p>	</div>
 		  <hr class="separador-modal">
@@ -165,7 +167,8 @@
 		  <hr class="separador-modal">
 		  <div class="col-lg-4 footer-desveoper"><p>Developer by </br> Professor Xavier</p></div>
 		</div>
-	</footer>
+	</footer> -->
+	<?php echo $footer?>
 	<!-- ************ FIM FOOTER ************  -->
 
 	<!-- ************ MODAL ************  -->

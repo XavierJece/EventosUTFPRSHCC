@@ -1,6 +1,7 @@
 <?php 
 	header("Content-type: text/html; charset=utf-8");
 	require_once '../php/Conecta.php';
+	require_once '../php/Elementos.php';
 
 	$con = new Conecta();
 	$eventos = $con->getEventos('evento');
@@ -34,10 +35,9 @@
 		
 </head>
 <body>
-	<nav class="navbar navbar-expand-lg mb-4 top-bar top-bar-Paginas navbar-static-top sps sps--abv">
+	<!-- <nav class="navbar navbar-expand-lg mb-4 top-bar top-bar-Paginas navbar-static-top sps sps--abv">
 		<div class="container">
 			<a class="navbar-brand mx-auto" href="../index.php">
-				<!-- Gra<span>freez</span> -->
 				<img src="../image/Logo/utfpr.png" alt="UTFPR Santa Helena" class="logoHead">
 			</a>
 
@@ -61,7 +61,9 @@
 
 
 		</div>
-	</nav>
+	</nav> -->
+
+	<?php echo $header?>
 
 
 <!-- Main -->
@@ -79,7 +81,11 @@
 				<div id="tab1" class="content-area">
 					<div class="row">
 						<div class="col-10"><h3>Participações em Eventos</h3></div>
-						<div class="col-2 text-right"><a name="" id="" class="btn btn-primary " href="#" role="button"><i class="fas fa-plus"></i> Novo</a></div>
+						<div class="col-2 text-right">
+							<a name="" id="" class="btn btn-primary " href="pagEvento.php?e=-1" role="button">
+								<i class="fas fa-plus"></i> Novo
+							</a>
+						</div>
 					</div>
 					
 					<table id="tblEventos" class="table table-striped">
@@ -104,7 +110,7 @@
 											<td>' . $value["titulo"] . '</td>
 											<td>' . $date . '</td>
 											<td>
-												<a name="" id="" class="btn btn-success" href="#" role="button">
+												<a name="" id="" class="btn btn-success" href="pagEvento.php?e=' . $value["id"] . '" role="button">
 													<i class="fas fa-pencil-alt"></i> Editar
 												</a>
 											</td>
@@ -121,7 +127,12 @@
 
 				<div id="tab2" class="content-area">
 					<div class="row">
-						<div class="col-12"><h3>Visitas Técnicas</h3></div>
+						<div class="col-10"><h3>Visitas Técnicas</h3></div>
+						<div class="col-2 text-right">
+							<a name="" id="" class="btn btn-primary " href="pagEvento.php?e=-1" role="button">
+								<i class="fas fa-plus"></i> Novo
+							</a>
+						</div>
 					</div>
 									
 					<table id="tblVisita" class="table table-striped">
@@ -167,15 +178,16 @@
 	</main>
 	
 	<!-- ************ FOOTER ************  -->
-	<footer class="footer-painel">
+	<!-- <footer class="footer-painel">
 		<div class="row">
 			<div class="col-lg-4 footer-utfpr"><p><a href="http://portal.utfpr.edu.br/cursos/coordenacoes/graduacao/santa-helena/sh-ciencia-da-computacao" target="_blank"> UTFPR - Santa Helena </br> Ciências da Computação</a></p>	</div>
 			<hr class="separador-modal">
-			<div class="col-lg-4 footer-copyright"><p><i class="far fa-copyright"></i> 2019 Copyright Text </p></div>
+			<div class="col-lg-4 footer-copyright"><p><i class="far fa-copyright"></i> 2019 Cop;yright Text </p></div>
 			<hr class="separador-modal">
 			<div class="col-lg-4 footer-desveoper"><p>Developer by </br> Professor Xavier</p></div>
 		</div>
-	</footer>
+	</footer> -->
+	<?php echo $footer?>
 	<!-- ************ FIM FOOTER ************  -->
 
 
