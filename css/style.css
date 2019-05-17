@@ -972,6 +972,7 @@ button.swiper-pagination-bullet{
 	margin-top: 100px;
 	margin-left: 15px;
 	margin-right: 15px;
+	margin-bottom: 20px;
 	display: flex;
 	/* text-align: center; */
 	padding: 0px;

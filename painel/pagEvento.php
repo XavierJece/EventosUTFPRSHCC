@@ -6,11 +6,22 @@
     require_once "../php/Conecta.php";
 
     $con = new Conecta();
+
+	session_start();
+	if($_SESSION['logado'] == "sim"){
+		$con->userLogado($_SESSION['user']);
+	}else{
+		header('Location: ../');
+    }
+    
+    if(!empty($_GET['sair']) == "sim"){
+		session_destroy();
+		header('Location: ../');
+	}
+
     $evento = new Evento();   
 
-    if(!isset($_GET['u']) || $_GET['u'] != 'jece'){
-        header('Location:' . $urlRaiz);
-    }
+
 
     if(isset($_GET['e'])){
         if($_GET['e'] == -1){
@@ -115,74 +126,7 @@
                     </div>
                 </div>
                 
-                <div class="row row-uploadFotos">
-                    <!-- Redirect browsers with JavaScript disabled to the origin page -->
-                    <noscript><input type="hidden" name="redirect" value="https://blueimp.github.io/jQuery-File-Upload/"></noscript>
-                    <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
-                    <div class="row fileupload-buttonbar">
-                        <div class="row">
-                            <!-- The fileinput-button span is used to style the file input field as button -->
-
-                            <div class="col-md-3">
-                                <span class="btn btn-success fileinput-button">
-                                    <i class="glyphicon glyphicon-plus"></i>
-                                    <span>Add Foto</span>
-                                    <input type="file" name="files[]" multiple>
-                                </span>
-                            </div>
-
-                            <div class="col-md-3">
-                                <button type="submit" class="btn btn-primary start">
-                                    <i class="glyphicon glyphicon-upload"></i>
-                                    <span>Enviar Fotos</span>
-                                </button>
-                            </div>
-
-                            <div class="col-md-3">
-                                <button type="reset" class="btn btn-warning cancel">
-                                    <i class="glyphicon glyphicon-ban-circle"></i>
-                                    <span>Cancelar Envio</span>
-                                </button>
-                            </div>
-
-                            <div class="col-md-3">
-                                <button type="button" class="btn btn-danger delete">
-                                    <i class="glyphicon glyphicon-trash"></i>
-                                    <span>Delete Fotos</span>
-                                </button>
-
-                                <input type="checkbox" class="toggle">
-                                <!-- The global file processing state -->
-                                <span class="fileupload-process"></span>
-                            </div>
-                            
-                        </div>
-                        
-                        <!-- The global progress state -->
-                        <div class="col-lg-5 fileupload-progress fade">
-                            <!-- The global progress bar -->
-                            <div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100">
-                                <div class="progress-bar progress-bar-success" style="width:0%;"></div>
-                            </div>
-                            <!-- The extended global progress state -->
-                            <div class="progress-extended">&nbsp;</div>
-                        </div>
-                    </div>
-                    <!-- The table listing the files available for upload/download -->
-                    <table role="presentation" class="table table-striped"><tbody class="files"></tbody></table>
-                </div>
-                <div class="row">
-                    <!-- The blueimp Gallery widget -->
-                    <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls" data-filter=":even">
-                        <div class="slides"></div>
-                        <h3 class="title"></h3>
-                        <a class="prev">‹</a>
-                        <a class="next">›</a>
-                        <a class="close">×</a>
-                        <a class="play-pause"></a>
-                        <ol class="indicator"></ol>
-                    </div>
-                </div>
+                
 
                 <div class="row">
                     <button type="submit" class="btn btn-primary">Salvar</button>
