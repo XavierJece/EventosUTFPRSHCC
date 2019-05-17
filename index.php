@@ -4,7 +4,8 @@
   require_once 'php/Elementos.php';
 	
 	$con = new Conecta();
-  $raiz = 'curso-cc/';
+  //$raiz = 'curso-cc/';
+  $raiz = '';
 
   $ultimoEvento = $con->getUltimoEvento('evento');
   $ultimoVisita = $con->getUltimoEvento('visita');  
@@ -20,7 +21,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en">
+<html lang="pt-br">
 <head>
 	<!-- Caracteres Especiais -->
     <meta charset="utf-8">

@@ -2,8 +2,8 @@
 
 
 $url = explode('/',$_SERVER['SCRIPT_NAME']);
-$urlRaiz = "http://sh.utfpr.edu.br/curso-cc";
-
+//$urlRaiz = "http://sh.utfpr.edu.br/curso-cc";
+$urlRaiz = "http://localhost/MY-Projects/Estagio/Site-eventos/Site";
 
 $active = array();
 $active[0] = null;
@@ -71,7 +71,7 @@ if(count($url) == 2){
 
                         <li class="nav-item ' . $active[1] . '" id="nav-item-VT"> <a class="nav-link" href="' . $urlRaiz . '/visitasTecnicas.php">Visitas Técnicas</a> </li>
                         <li class="nav-item ' . $active[2] . '" id="nav-item-EVENTOS"> <a class="nav-link" href="' . $urlRaiz . '/evento.php">Eventos</a> </li>
-                        <li class="nav-item " id="nav-item-EVENTOS"> <a class="nav-link" href="' . $urlRaiz . '">Sair</a> </li>
+                        <li class="nav-item " id="nav-item-EVENTOS"> <a class="nav-link" href="?sair=sim ">Sair</a> </li>
                     </ul>
                 </div>
             </div>

@@ -1,5 +1,4 @@
 <?php 
-
     include_once 'Config.php';
 
 class Conecta extends Config{
@@ -13,18 +12,45 @@ class Conecta extends Config{
     }
 
     /**My Functions */
-    function login($usuario, $senha){
+    function logar($info){
 
-        $stmt = $this->pdo->prepare("SELECT * FROM usuario WHERE user = :a AND senha = :b");
+        $usuario = $info['login'];
+        $senha = $info['senha'];
+
+        $stmt = $this->pdo->prepare("SELECT id FROM usuario WHERE user = :a AND senha = :b");
         $stmt->bindValue(":a", $usuario);
         $stmt->bindValue(":b", $senha);
 
-        $run = $stmt->execute();
+        $stmt->execute();
 
-        $rs = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        if($stmt->rowCount() == 0){
+            header('location: index.php?login=error');
+        }else{
+            session_start();
+            $rs = $stmt->fetch();
+            $_SESSION['logado'] = "sim";
+            $_SESSION['user'] = $rs['id'];
+            header('location: adm.php');
+        }
 
-        return $rs;
     }
+
+    function userLogado($info){
+
+        $id = $info;
+
+        $stmt = $this->pdo->prepare("SELECT nome FROM usuario WHERE id = :a");
+        $stmt->bindValue(":a", $id);
+
+        $stmt->execute();
+
+        $rs = $stmt->fetch();
+        $_SESSION['nome'] = $rs['nome'];
+
+
+
+    }
+
 
     function getEventos($tipo){
         $stmt = $this->pdo->prepare("SELECT * FROM eventos WHERE tipo = :a ORDER BY  `data` desc");

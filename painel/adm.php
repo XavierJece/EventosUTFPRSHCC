@@ -1,9 +1,24 @@
 <?php 
 	header("Content-type: text/html; charset=utf-8");
 	require_once '../php/Conecta.php';
+	$con = new Conecta();
+
+	session_start();
+	if(!empty($_SESSION['logado']) == "sim"){
+		$con->userLogado($_SESSION['user']);
+	}else{
+		header('Location: ../');
+	}
+
+	if(!empty($_GET['sair']) == "sim"){
+		session_destroy();
+		header('Location: ../');
+	}
+
+
 	require_once '../php/Elementos.php';
 
-	$con = new Conecta();
+	
 	$eventos = $con->getEventos('evento');
 	$visitas = $con->getEventos('visita');
 ?>

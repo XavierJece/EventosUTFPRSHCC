@@ -30,6 +30,22 @@ body{
     text-align: center;
 }
 
+.Box-error{
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translate(-50%,50%);
+  width: auto;
+  
+  padding: 25px;
+  background: rgba(255, 255, 255,  .65);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, .67);
+  border-radius: 10px;
+  color:rgb(212, 22, 22);
+}
+
+
 /*
 P.S: if you like my content maybe you will become a donator and donate some money? That helps me to create new awesome materials. https://www.paypal.me/melnik909
 */
