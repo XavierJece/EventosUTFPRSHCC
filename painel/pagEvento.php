@@ -26,6 +26,7 @@
     if(isset($_GET['e'])){
         if($_GET['e'] == -1){
             $tituloPage = "Adicinar novo Evento!";
+            $nameButton = "Adicinar";
             
         }else{
             if(gettype($con->getEvento($_GET['e'])) != 'object'){
@@ -34,8 +35,10 @@
                 $evento = $con->getEvento($_GET['e']);
 
                 $tituloPage = "Editar " . $evento->getTipo() . "!";
+                $nameButton = "Editar";
                 $date = explode(" ", $evento->getData());
                 $date = $date[0];
+
             }
         }
     }else{
@@ -64,8 +67,10 @@
 	<!-- Galeria -->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.0/baguetteBox.min.css">
         
-	<!-- My CSS -->
-	    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <!-- My CSS -->
+        <link rel="stylesheet" type="text/css" href="../css/gallery-grid.css">
+        <link rel="stylesheet" type="text/css" href="../css/style.css">
+        
 		
 </head>
 <body>
@@ -74,7 +79,7 @@
 	<!-- ************ FIM FOOTER ************  -->
 	
 
-	<!-- ************ FOOTER ************  -->
+	<!-- ************ MIAN ************  -->
 	<main class="main-pagEvento">
 
             <div class="row">
@@ -82,16 +87,18 @@
                     <h2><?=$tituloPage;?></h2>
                 </div>
             </div>
-            <form  id="fileupload" method="POST" enctype="multipart/form-data">
-            
+            <form  id="fileupload" method="POST" enctype="multipart/form-data" action="../php/addEvento.php">
+            <input name="idEvento" type="hidden"value="<?=  base64_encode($_GET['e']);?>">
+
+
                 <div class="row">
                     <div class="col-md-6">
                         <label for="txtTitulo">Titulo:</label>
-                        <input type="text" class="form-control" id="txtTitulo" aria-describedby="" placeholder="Titulo" value="<?=$evento->getTitulo();?>">
+                        <input  name="titulo" type="text" class="form-control" id="txtTitulo" aria-describedby="" placeholder="Titulo" required value="<?=$evento->getTitulo();?>">
                     </div>
                     <div class="col-md-3">
-                        <label for="exampleFormControlSelect1">Tipo: </label>
-                        <select class="form-control" id="sleTipo">
+                        <label  for="exampleFormControlSelect1">Tipo: </label>
+                        <select name="tipoEvento" class="form-control" id="sleTipo" required>
                             <?php 
                                 if($evento->getTipo() == "evento"){
                                     echo '
@@ -109,31 +116,86 @@
                     </div>
                     <div class="col-md-3">
                         <label for="validationTextarea">Quando ocorreu: </label>
-                        <input type="date" class="form-control" id="txtTitulo" aria-describedby="" value="<?=$date;?>">
+                        <input name="dateEvento" type="date" class="form-control" id="validationTextarea" aria-describedby="" required value="<?=$date;?>">
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-md-12">
                         <label for="validationTextarea">Previa:</label>
-                        <textarea class="form-control" id="txtPrevia" placeholder="Previa do que foi o evento ou visita" required><?=$evento->getPrevia();?></textarea>
+                        <textarea name="previa" class="form-control" id="txtPrevia" placeholder="Previa do que foi o evento ou visita" required><?=$evento->getPrevia();?></textarea>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-12">
                         <label for="validationTextarea">Texto: </label>
-                        <textarea class="form-control" id="txtConteudo" placeholder="Texto do que foi o evento ou visita" required><?=strip_tags($evento->getTexto()) ?></textarea>
+                        <textarea name="texto" class="form-control" id="txtConteudo" placeholder="Texto do que foi o evento ou visita" required><?=strip_tags($evento->getTexto()) ?></textarea>
                     </div>
                 </div>
                 
-                
+                <div class="row row-fotos">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3 class="titulo">Fotos</h3>
+                        </div>
+                    </div>
+
+                    <div class="row ">
+                            <div class="col-md-4 row-inputAddFoto"> 
+                                <label for="txtUparFotos" class="txtTitulo">Adicionar Fotos: </label>
+                                <input type="file" id="txtUparFotos " class="" name="foto[]" multiple/>
+                            </div>
+                    
+
+                        <div class="col-md-8">
+
+                            <div class="row lista-fotos">
+                                <div class="tz-gallery">
+                                    
+                                    <div class="row ">
+                                            
+
+                                        <?php
+                                        
+                                            if($_GET['e'] == -1){
+                                                echo "<h1>Após adicionar as fotos, elas serão exibidas aqui.</h1>";
+                                            }else{
+                                                foreach($con->getFotos($evento->getId()) as $foto ){
+                                                
+                                                    $pathFoto = "../image/";
+                                                    $pathFoto = $pathFoto . $evento->getTipo() . "/" . $evento->getId() . "/";
+                                                    $pathFoto = $pathFoto . $foto['nome'] . "." . $foto["extensao"];
+        
+        
+                                                    echo "
+                                                    
+                                                    <div class='col-sm-6 col-md-4'>
+                                                        <a class='lightbox' href='" . $pathFoto . "'>
+                                                            <img src='" . $pathFoto . "' alt='" . $foto['descricao'] . "'> 
+                                                        </a>
+                                                        <button class='btn btn-danger btn-Excluir'  >Excluir</button>
+                                                    </div>
+        
+        
+                                                    ";
+        
+                                                }
+                                            }
+                                        
+                                        ?>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="row">
-                    <button type="submit" class="btn btn-primary">Salvar</button>
+                    <button type="submit" class="btn btn-primary" name="<?=$nameButton;?>">Salvar</button>
                 </div>
             </form>
 	</main>
-	<!-- ************ FIM FOOTER ************  -->
+	<!-- ************ FIM MAIN ************  -->
 	
 	
 	<!-- ************ FOOTER ************  -->

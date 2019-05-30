@@ -1,6 +1,6 @@
 <?php 
-    include_once 'Config.php';
-
+    require_once 'Config.php';
+    include_once 'Evento.php';
 class Conecta extends Config{
     /**Atributos */
     var $pdo;
@@ -142,6 +142,15 @@ class Conecta extends Config{
         return $lista;
     }
 
+    function getUltimoEventoAdicionado(){
+        $stmt = $this->pdo->prepare("SELECT MAX(`id`) FROM `eventos`");
+        $run = $stmt->execute();
+
+        $rs =  $stmt->fetch(PDO::FETCH_ASSOC);
+
+        return $rs['MAX(`id`)'];
+    }
+
     function deleteFotos($foto){
         $stmt = $this->pdo->prepare("DELETE FROM fotos WHERE id = :a");
         $stmt->bindValue(":a", $foto);
@@ -157,11 +166,11 @@ class Conecta extends Config{
     }
 
     function insertFotos($nome, $extensao, $descricao, $evento){
-        $stmt = $this->pdo->prepare("INSERT INTO `fotos`(`nome`, `extensao`, `descricao`, `evento`) VALUES (:a,:b,:c,:d)");
-        $stmt->bindValue(":a", $nome);
+        $stmt = $this->pdo->prepare("INSERT  INTO `fotos`(`nome`, `extensao`, `descricao`, `evento`) VALUES (:a,:b,:c,:d)");
+        $stmt->bindValue(":a", $nome, );
         $stmt->bindValue(":b", $extensao);
         $stmt->bindValue(":c", $descricao);
-        $stmt->bindValue(":s", $evento);
+        $stmt->bindValue(":d", $evento);
         $run = $stmt->execute();
 
     }
@@ -176,6 +185,7 @@ class Conecta extends Config{
         $run = $stmt->execute();
 
     }
+
 
 
 
